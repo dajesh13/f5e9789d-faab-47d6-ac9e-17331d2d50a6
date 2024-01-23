@@ -8,7 +8,14 @@ class LongestIncreasingSubsequence
 
     static void Main()
     {
-        FindLongestRisingSequence([6,2,4,6,1,5,9,2]);
+        int myInt;
+        Console.Write("Input numbers separated by space: ");
+       string inputString = Console.ReadLine();
+       var array = inputString. ToCharArray(). Where(x=>
+        int. TryParse(x. ToString(), out myInt)). Select(x=>
+        int. Parse(x. ToString())). ToArray();
+        
+        FindLongestRisingSequence(array);
     } 
     private static void FindLongestRisingSequence(int[] inputArray)
     {
